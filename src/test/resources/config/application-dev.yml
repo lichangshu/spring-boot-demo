@@ -1,0 +1,34 @@
+#####################
+##### DEV
+config:
+  test: true
+#
+spring:
+  datasource:
+    tomcat:
+      validation-query: values 1
+    driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+    url: jdbc:derby:target/derby.test.db;create=true
+  jpa:
+#    database-platform: mysql
+    database: DERBY
+    generate-ddl: true
+  redis:
+    database: 7
+    host: 127.0.0.1
+    port: 6379
+  session:
+    store-type: none ##  开发环境不需要 生产使用 redis
+#
+
+#logging:
+#  level:
+#    org.springframework.web.client.RestTemplate: debug
+
+server:
+  tomcat:
+    accesslog:
+      enabled: true
+      prefix: ${spring.application.name:spring-boot}
+
+#

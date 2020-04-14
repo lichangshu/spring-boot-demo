@@ -1,0 +1,50 @@
+###
+# spring config
+###
+spring:
+  application:
+    name: spring-boot-demo
+  profiles:
+    active: dev
+# Tomcat datasource specific settings
+  datasource:
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 300000
+      max-lifetime: 600000
+      maximum-pool-size: 15
+      minimum-idle: 5
+      pool-name: HikariPool
+    type: com.zaxxer.hikari.HikariDataSource
+#
+  messages:
+    basename: i18n/messages
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  jpa:
+#    database-platform: mysql
+    database: MYSQL 
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+#      naming:
+#        implicit-strategy: 
+#        physical-strategy: 
+#        strategy: 
+#      use-new-id-generator-mappings: 
+    open-in-view: true
+#    show-sql: true
+#    properties:
+#      .*
+  session:
+    store-type: redis
+    redis:
+      namespace: ${spring.application.name}
+  security:
+    user:
+      password: 140d0860-96e4-482e-a171-465a2e08ffbc
+#

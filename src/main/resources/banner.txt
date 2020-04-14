@@ -1,0 +1,4 @@
+===================================
+> spring-boot-${spring-boot.version} :: ${spring.application.name:application}-(${spring.profiles.active:})
+> Logging in CONSOLE or ${logging.path}/${logging.file:spring.log}
+===================================

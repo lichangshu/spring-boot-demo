@@ -1,0 +1,35 @@
+#####################
+##### DEV
+#
+#debug: true
+#
+config:
+  swagger.enable: false
+#
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.2.18:3306/book_view?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: 123456
+#  jpa:
+#    show-sql: true
+  redis:
+    database: 10
+    host: 192.168.2.18
+    port: 6379
+  session:
+    store-type: none ##  开发环境不需要 生产使用 redis
+
+#logging:
+#  level:
+#    org.springframework.web.servlet.mvc: error
+
+server:
+  port: 8080
+  tomcat:
+    accesslog:
+      enabled: true
+      prefix: ${spring.application.name:spring-boot}
+#
+
